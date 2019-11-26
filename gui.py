@@ -87,7 +87,7 @@ while True:
         print()
     if func == 2:
         print("신청 목록에 넣을 강의 인덱스를 입력하세요")
-        index = int(input())
+        index = int(input()) + 1
         new_lecture_list.append([name_data[index], time_1st_data[index],time_2nd_data[index], place_1st_data[index],place_2nd_data[index],professor_data[index]])
         print(new_lecture_list)
     if func == 3:
@@ -98,10 +98,28 @@ while True:
         print("관리자 메뉴입니다.")
         print("관리자 비밀번호를 입력하세요")
         password = input(">>")
-        if password == password_init:
+        if password == admin_password:
             print("1. 수강편람 수정")
             print("2. 관리자 비밀번호 변경")
+            print("3. 이전 메뉴")
             func_admin = int(input(">> "))
+            if func_admin == 1:
+                print()
+            elif func_admin == 2:
+                admin_password = input("비밀번호 >> ")
+                f = open('admin.txt', mode='wt', encoding='utf-8')
+                f.write(admin_password)
+                f.close()
+            elif func_admin == 3:
+                continue
+            else:
+                print("잘못된 항목 선택")
+                exit()
+
+        else:
+            print("비밀번호 오류!")
+            exit()
+
 
         
         
