@@ -88,13 +88,13 @@ while True:
     if func == 2:
         print("신청 목록에 넣을 강의 인덱스를 입력하세요")
         index = int(input())
-        new_lecture_list.append(name[index], time_1st_data[index],time_2nd_data[index], place_1st_data[index],place_2nd_data[index],professor_data[index]);
+        new_lecture_list.append([name_data[index], time_1st_data[index],time_2nd_data[index], place_1st_data[index],place_2nd_data[index],professor_data[index]])
         print(new_lecture_list)
     if func == 3:
         print(new_lecture_list)
     if func == 4:
         print()
-    if fumc == 5:
+    if func == 5:
         print("관리자 메뉴입니다.")
         print("관리자 비밀번호를 입력하세요")
         password = input(">>")
